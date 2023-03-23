@@ -1,0 +1,9 @@
+
+.earth img{
+    width: 100%;
+    height: 90%;
+    border: 1px solid;
+    margin-top: 10%;
+   position: relative;
+   top: 0px;
+}

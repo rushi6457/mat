@@ -1,0 +1,15 @@
+
+.citiesName{
+    display: flex;
+    width: 60%;
+    margin: auto;
+    gap: 10px;
+
+}
+.descText{
+    position: relative;
+    font-size: 1.2rem;
+    top: -70px;
+    color: white;
+    font-weight: bold;
+}
