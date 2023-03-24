@@ -5,15 +5,21 @@ import {Link } from "react-scroll";
 
 const Navbar = () => {
     const {handleScroll} = useContext(ScrollContext)
-    
+    console.log(handleScroll);
     return (
-        <nav  className={styles.header}>
+        <nav  className={styles.header} >
             <ul>
-                <Link activeClass="active" to="home" spy={true} smooth={true} offset={50} duration={500}><li>Home</li></Link>    
+                {/* <Link activeClass="active" to="home" spy={true} smooth={true} offset={50} duration={500}> */}
+                    <li onClick={()=>handleScroll("home")}>Home</li>
+                {/* </Link>     */}
 
-                 <Link activeClass="active" to="cities" spy={true} smooth={true} offset={50} duration={500}><li>Cities</li></Link>  
+                 {/* <Link activeClass="active" to="cities" spy={true} smooth={true} offset={50} duration={500}> */}
+                    <li onClick={()=>handleScroll("cities")}>Cities</li>
+                 {/* </Link>   */}
                      
-                 <Link activeClass="active" to="news" spy={true} smooth={true} offset={50} duration={500}><li>News</li></Link>   
+                 {/* <Link activeClass="active" to="news" spy={true} smooth={true} offset={50} duration={500}> */}
+                    <li onClick={()=>handleScroll("news")}>News</li>
+                 {/* </Link>    */}
             </ul>     
         </nav>
     );

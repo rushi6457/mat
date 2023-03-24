@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from "../Styles/Home.module.css"
+import useFadeUp from '../hooks/useFadeUp';
+import FadeUp from './Fadeup';
 
 let Degree = ({temp}) =>{
 
@@ -18,13 +20,13 @@ const CityDetails = ({data}) => {
     let [time,setTime] = useState('')
     const [d,setD] = useState('')
     let date = new Date()
-   
     useEffect(()=>{
         setTime(date.toTimeString().split(" ")[0])
         setD(date.toDateString())
     },[])
     
     return (
+    // <FadeUp>
         <div className={styles.citydeatils}>
             <Degree temp ={Math.floor(data?.main?.temp)}/>
             <div className={styles.dateDay}>
@@ -35,6 +37,7 @@ const CityDetails = ({data}) => {
                 </div>
              </div>
         </div>
+    /* </FadeUp> */
     );
 }
 

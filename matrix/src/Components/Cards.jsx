@@ -30,12 +30,11 @@ let Images = ({tem}) =>{
     }
 }
 const Cards = ({city}) => {
-    const year = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+    
     const [data,setData] = useState([])
     let [time,setTime] = useState('')
     const [d,setD] = useState('')
     let date = new Date()
-    console.log(d);
     useEffect(()=>{
         setTime(date.toTimeString().split(" ")[0])
         setD(date.toDateString().split("Thu")[1])
@@ -54,7 +53,7 @@ const Cards = ({city}) => {
             <div className={styles.tempdata}>
                 <div>
                     <p>{data?.name}</p>
-                    <h5>{d}</h5>
+                    <h5 >{d}</h5>
                 </div>
                 <Degree temp={data?.main?.temp}/>
             </div>

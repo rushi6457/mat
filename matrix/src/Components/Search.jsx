@@ -3,6 +3,8 @@ import styles from "../Styles/Search.module.css";
 import {IoSearchOutline} from "react-icons/io5"
 import axios from 'axios';
 import Cards from './Cards';
+import FadeUp from './Fadeup';
+import useFadeUp from '../hooks/useFadeUp';
 
 let Degree = ({temp}) =>{
 
@@ -14,7 +16,6 @@ let Degree = ({temp}) =>{
 const Search = () => {
     const [input,setInput] = useState('');
     const [queue, setQueue] = useState(['Delhi', 'Chennai', 'Jaipur']);
-
     const handleSubmit = (e) =>{
         e.target.value = '';
         axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=f9e3ee87c2765b677ab21d53d1138a56`)
@@ -27,7 +28,7 @@ const Search = () => {
     }
     
     return (
-    <div>
+    <div >
         <h1 style={{padding:'40px'}}>Cities</h1>
         <div className={styles.cards} >
             <Cards city={queue[0]}/>

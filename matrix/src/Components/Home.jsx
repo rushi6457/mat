@@ -8,7 +8,7 @@ import Details from './Details';
 import CityDetails from './CityDetails';
 
 const Home = () => {
-    const ref = useContext(ScrollContext)
+    const {homeRef} = useContext(ScrollContext)
     const[data,setData] = useState([])
     const [error,setError] = useState('')
     useEffect(()=>{
@@ -21,7 +21,7 @@ const Home = () => {
     },[])
     return (
         <div className={styles.home}
-        id='home'    
+        ref={homeRef} 
         >
         <Navbar/>
 

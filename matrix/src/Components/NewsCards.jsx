@@ -10,17 +10,17 @@ import styles from "../Styles/News.module.css"
 let Images = ({tem}) =>{
     if(tem ==="few clouds"){
         return(
-            <img width={'100%'} height={'300px'} style={{borderTopRightRadius:'20px',borderTopLeftRadius:'20px'}} src={fewclouds}/>
+            <img width={'200px'} height={'300px'} style={{borderTopRightRadius:'20px',borderTopLeftRadius:'20px'}} src={fewclouds}/>
         )
     }
     else if(tem ==="scattered clouds"){
         return(
-            <img width={'90%'} height={'300px'} style={{borderTopRightRadius:'20px',borderTopLeftRadius:'20px'}} src={scclouds}/>
+            <img width={'200px'} height={'300px'} style={{borderTopRightRadius:'20px',borderTopLeftRadius:'20px'}} src={scclouds}/>
         )
     }
     else{
         return(
-            <img width={'100%'} height={'300px'} style={{borderTopRightRadius:'20px',borderTopLeftRadius:'20px'}} src={summer}/>
+            <img width={'200px'} height={'300px'} style={{borderTopRightRadius:'20px',borderTopLeftRadius:'20px'}} src={summer}/>
         )
     }
 }
@@ -32,12 +32,14 @@ const NewsCards = ({city}) => {
         .then((res) =>setDesc(res.data.list))
     },[])
 
-    console.log(desc[0]);
     return (
-        <div >
-            <div>
+        <div className={styles.container}>
+            <div >
             <Images tem={desc[0]?.weather[0]?.description} />
             <p className={styles.descText}>{`${desc[0]?.weather[0]?.description} in ${city}`}</p>
+            {/* <div className={styles.overlay}>
+                <p className={styles.text}>Read More</p>
+            </div> */}
             </div>
         </div>
     );
